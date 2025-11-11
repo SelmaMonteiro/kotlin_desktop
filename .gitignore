@@ -5,3 +5,5 @@ bin/
 .vscode/
  *.log
  *.iml
+ .kotlin/
+*.class

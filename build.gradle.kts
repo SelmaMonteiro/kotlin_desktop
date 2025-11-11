@@ -19,6 +19,15 @@ dependencies {
     implementation(compose.desktop.currentOs)
 }
 
+// Garantir alinhamento de JVM target em todo o build
+kotlin {
+    jvmToolchain(17)
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    kotlinOptions.jvmTarget = "17"
+}
+
 sourceSets {
     main {
         kotlin.srcDirs("src/desktopMain/kotlin")
